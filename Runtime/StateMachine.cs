@@ -21,7 +21,7 @@ namespace Varollo.BasicFiniteStateMachine
             {
                 if (!isInitialized)
                 {
-                    ThrowNotInitializedError();
+                    ThrowNotInitializedWarning();
                 }
 
                 return isInitialized;
@@ -65,12 +65,16 @@ namespace Varollo.BasicFiniteStateMachine
         /// <param name="initialState">First state of the State Machine</param>
         public void Initialize(State initialState)
         {
+            if (IsInitialized) return;
+
             IsInitialized = true;
+
+            Debug.LogWarning("State Machine initialized.");
 
             CurrentState = initialState;
             CurrentState.Enter();
         }
 
-        private void ThrowNotInitializedError() => Debug.LogError("State Machine not initialized.");
+        private void ThrowNotInitializedWarning() => Debug.LogWarning("State Machine not initialized.");
     }
 }
