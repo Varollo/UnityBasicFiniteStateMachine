@@ -43,7 +43,10 @@ namespace Varollo.BasicFiniteStateMachine
             {
                 if (!IsInitialized) return;
 
-                currentState.Exit();
+                if (currentState != null)
+                {
+                    currentState.Exit();
+                }
 
                 currentState = value;
 
