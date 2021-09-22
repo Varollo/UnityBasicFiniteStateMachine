@@ -4,11 +4,17 @@ namespace Varollo.BasicFiniteStateMachine
 {
     public class StateMachine
     {
+        /// <summary>
+        /// State Machine Controller linked to this State Machine
+        /// </summary>
         public readonly StateMachineController Controller;
 
         private State currentState;
         private bool isInitialized;
 
+        /// <summary>
+        /// Is this State Machine Initialized yet?
+        /// </summary>
         public bool IsInitialized
         {
             get
@@ -27,6 +33,9 @@ namespace Varollo.BasicFiniteStateMachine
             }
         }
 
+        /// <summary>
+        /// Current State of this State Machine
+        /// </summary>
         public State CurrentState
         {
             get => currentState;
@@ -47,6 +56,10 @@ namespace Varollo.BasicFiniteStateMachine
             Controller = controller;
         }
 
+        /// <summary>
+        /// Call this method to initialize a State Machine with its first State
+        /// </summary>
+        /// <param name="initialState">First state of the State Machine</param>
         public void Initialize(State initialState)
         {
             IsInitialized = true;
@@ -55,6 +68,6 @@ namespace Varollo.BasicFiniteStateMachine
             CurrentState.Enter();
         }
 
-        public void ThrowNotInitializedError() => Debug.LogError("State Machine not initialized.");
+        private void ThrowNotInitializedError() => Debug.LogError("State Machine not initialized.");
     }
 }
