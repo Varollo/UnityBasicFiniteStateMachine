@@ -39,7 +39,14 @@ namespace Varollo.BasicFiniteStateMachine
         protected virtual void Awake()
         {
             CreateStateMachine();
+            InitializeStates();
         }
+
+        /// <summary>
+        /// Method called in awake.
+        /// Used to initialize all states.
+        /// </summary>
+        protected abstract void InitializeStates();
 
         /// <summary>
         /// Called every frame.
