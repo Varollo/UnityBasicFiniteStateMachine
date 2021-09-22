@@ -1,0 +1,19 @@
+{
+  "name": "com.varollo.basic_finite_state_machine",
+  "version": "1.0.0",
+  "displayName": "Basic Finite State Machine",
+  "description": "This package includes the base code for a finite state machine.\nMaybe in the future an editor for it.",
+  "unity": "2019.1",
+  "keywords": [
+    "statemachine",
+    "state",
+    "finitestatemachine"
+  ],
+  "author": {
+    "name": "Gabriel Carollo (Varollo)",
+    "email": "rimoldi98@gmail.com",
+    "url": "http://varollo.github.io"
+  },
+  "hideInEditor": true,
+  "type": "library"
+}
